@@ -186,7 +186,7 @@ async function submitQuiz(){
   document.getElementById("resultBox").style.display="block";
 
   /* SEND TO APPS SCRIPT */
-  await fetch("YOUR_SCRIPT_URL_HERE",{
+  await fetch("https://script.google.com/macros/s/AKfycbyjcWF840ozV-sJylP6ymM2V-5YRmUiF4SnqUGC137i4ayO5E4VEkDA5Yagi44aBK7_jw/exec",{
     method:"POST",mode:"no-cors",
     headers:{"Content-Type":"application/json"},
     body:JSON.stringify({
@@ -204,3 +204,4 @@ async function submitQuiz(){
 
 </body>
 </html>
+
