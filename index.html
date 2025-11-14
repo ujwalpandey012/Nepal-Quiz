@@ -151,7 +151,7 @@
       document.querySelectorAll('input[type="radio"]:checked').forEach(a=>answers[a.name]=a.value);
 
       // send to Google Sheet
-      fetch("https://script.google.com/macros/s/AKfycbzuE960kQFPwXUKEVHh-v5NY-ugY_s_DTykrGi47Ao5vXq_Xcgc0Z853VqmtNcX7G3Nbg/exec",{
+      fetch("https://script.google.com/macros/s/AKfycbzuU9hYrkoGJs-gltrA0yFDXlFV_vGAGebV_n_V92bRufQuqreaJKOVeiPN2ezGMdxHeQ/exec",{
         method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
         body:JSON.stringify({name,email,score,percent,remark,answers,time:new Date().toLocaleString()})
       });
@@ -159,3 +159,4 @@
   </script>
 </body>
 </html>
+
