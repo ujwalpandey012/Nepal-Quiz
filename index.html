@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nepal GK Secure Quiz | Ujwal</title>
+  <title>Nepal GK Secure Quiz | Ujwal Pandey</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="quiz-container glass">
-    <h1>Nepal General Knowledge Secure Quiz</h1>
-    <p id="timer">Time left: 05:00</p>
+    <h1>🇳🇵 Nepal General Knowledge Secure Quiz</h1>
+    <p id="timer">⏱️ Time left: 05:00</p>
 
     <form id="quizForm">
       <input type="text" id="playerName" placeholder="Enter your full name" required />
@@ -24,139 +24,105 @@
   </div>
 
   <script>
-    /* ========================
-       1️⃣ QUIZ QUESTIONS ARRAY
-       ======================== */
+    /* ===============================
+       NEPAL GK QUIZ QUESTIONS (11)
+    =============================== */
     const quizData = [
-      {
-        q: "1️⃣ नेपालमा पहिलो रेलसेवा कहाँ सञ्चालन भयो?<br>When and where was Nepal’s first railway service operated?",
-        options: ["Raxaul – Amlekhganj","Birgunj – Simara","Janakpur – Jaynagar","Biratnagar – Rangeli"],
-        correct: 0
-      },
-      {
-        q: "2️⃣ नेपालको पहिलो जलविद्युत् आयोजना कुन हो?<br>Which was Nepal’s first hydroelectric project?",
-        options: ["Pharping","Trishuli","Kulekhani","Sunkoshi"],
-        correct: 0
-      },
-      {
-        q: "3️⃣ नेपालको पहिलो बैंक कुन हो?<br>Which is Nepal’s first bank?",
-        options: ["Nepal Bank Limited","Nepal Rastra Bank","Agriculture Development Bank","Rastriya Banijya Bank"],
-        correct: 0
-      },
-      {
-        q: "4️⃣ नेपालको पहिलो संविधान कुन वर्षमा जारी गरिएको थियो?<br>In which year was Nepal’s first constitution promulgated?",
-        options: ["1948 A.D. (2004 B.S.)","1951 A.D. (2008 B.S.)","1962 A.D. (2019 B.S.)","1990 A.D. (2047 B.S.)"],
-        correct: 0
-      },
-      {
-        q: "5️⃣ नेपाल संयुक्त राष्ट्रसंघको सदस्य कहिले भएको हो?<br>When did Nepal join the United Nations?",
-        options: ["1955 A.D.","1950 A.D.","1957 A.D.","1961 A.D."],
-        correct: 0
-      },
-      {
-        q: "6️⃣ नेपालको पहिलो विश्वविद्यालय कुन हो?<br>Which is the first university of Nepal?",
-        options: ["Tribhuvan University","Kathmandu University","Purbanchal University","Mid-Western University"],
-        correct: 0
-      },
-      {
-        q: "7️⃣ नेपाली भाषामा छायाङ्कन गरिएको पहिलो चलचित्र कुन हो?<br>Which was the first Nepali-language film shot in Nepal?",
-        options: ["Aama","Satya Harischandra","Maitighar","Harischandra"],
-        correct: 0
-      },
-      {
-        q: "8️⃣ नेपालको संविधान २०७२ अनुसार राष्ट्रिय सभामा कति सदस्य हुन्छन्?<br>According to the Constitution of Nepal 2072, how many members are there in the National Assembly?",
-        options: ["59","56","60","61"],
-        correct: 0
-      },
-      {
-        q: "9️⃣ नेपालको पहिलो राष्ट्रिय जनगणना कहिले गरिएको हो?<br>When was Nepal’s first national census conducted?",
-        options: ["1911 A.D.","1941 A.D.","1952 A.D.","1961 A.D."],
-        correct: 0
-      },
-      {
-        q: "🔟 नेपालले SAARC को स्थापना सम्झौता कहिले साइन गरेको थियो?<br>When did Nepal sign the SAARC Charter?",
-        options: ["8 December 1985","6 January 1984","10 December 1986","1 November 1985"],
-        correct: 0
-      },
-      {
-        q: "1️⃣1️⃣ नेपालको पहिलो आन्तरिक उडान कहिले भएको थियो?<br>When was Nepal’s first domestic flight operated?",
-        options: ["1950 A.D., Kathmandu–Simara","1949 A.D., Kathmandu–Pokhara","1950 A.D., Kathmandu–Biratnagar","1951 A.D., Kathmandu–Janakpur"],
-        correct: 0
-      }
+      { q: "नेपालमा पहिलो रेलसेवा कहाँ सञ्चालन भयो?<br>When and where was Nepal’s first railway service operated?", options: ["Raxaul – Amlekhganj","Birgunj – Simara","Janakpur – Jaynagar","Biratnagar – Rangeli"], correct: "Raxaul – Amlekhganj" },
+      { q: "नेपालको पहिलो जलविद्युत् आयोजना कुन हो?<br>Which was Nepal’s first hydroelectric project?", options: ["Pharping","Trishuli","Kulekhani","Sunkoshi"], correct: "Pharping" },
+      { q: "नेपालको पहिलो बैंक कुन हो?<br>Which is Nepal’s first bank?", options: ["Nepal Bank Limited","Nepal Rastra Bank","Agriculture Development Bank","Rastriya Banijya Bank"], correct: "Nepal Bank Limited" },
+      { q: "नेपालको पहिलो संविधान कुन वर्षमा जारी गरिएको थियो?<br>In which year was Nepal’s first constitution promulgated?", options: ["1948 A.D. (2004 B.S.)","1951 A.D. (2008 B.S.)","1962 A.D. (2019 B.S.)","1990 A.D. (2047 B.S.)"], correct: "1948 A.D. (2004 B.S.)" },
+      { q: "नेपाल संयुक्त राष्ट्रसंघको सदस्य कहिले भएको हो?<br>When did Nepal join the United Nations?", options: ["1955 A.D.","1950 A.D.","1957 A.D.","1961 A.D."], correct: "1955 A.D." },
+      { q: "नेपालको पहिलो विश्वविद्यालय कुन हो?<br>Which is the first university of Nepal?", options: ["Tribhuvan University","Kathmandu University","Purbanchal University","Mid-Western University"], correct: "Tribhuvan University" },
+      { q: "नेपाली भाषामा छायाङ्कन गरिएको पहिलो चलचित्र कुन हो?<br>Which was the first Nepali-language film shot in Nepal?", options: ["Aama","Satya Harischandra","Maitighar","Harischandra"], correct: "Aama" },
+      { q: "नेपालको संविधान २०७२ अनुसार राष्ट्रिय सभामा कति सदस्य हुन्छन्?<br>According to the Constitution of Nepal 2072, how many members are there in the National Assembly?", options: ["59","56","60","61"], correct: "59" },
+      { q: "नेपालको पहिलो राष्ट्रिय जनगणना कहिले गरिएको हो?<br>When was Nepal’s first national census conducted?", options: ["1911 A.D.","1941 A.D.","1952 A.D.","1961 A.D."], correct: "1911 A.D." },
+      { q: "नेपालले SAARC को स्थापना सम्झौता कहिले साइन गरेको थियो?<br>When did Nepal sign the SAARC Charter?", options: ["8 December 1985","6 January 1984","10 December 1986","1 November 1985"], correct: "8 December 1985" },
+      { q: "नेपालको पहिलो आन्तरिक उडान कहिले भएको थियो?<br>When was Nepal’s first domestic flight operated?", options: ["1950 A.D., Kathmandu–Simara","1949 A.D., Kathmandu–Pokhara","1950 A.D., Kathmandu–Biratnagar","1951 A.D., Kathmandu–Janakpur"], correct: "1950 A.D., Kathmandu–Simara" }
     ];
 
-    /* ===== SHUFFLE QUESTIONS ===== */
-    quizData.sort(() => Math.random() - 0.5);
+    // Shuffle helper
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
 
-    /* ===== DISPLAY QUESTIONS ===== */
+    // Shuffle questions and options
+    shuffle(quizData);
+    quizData.forEach(q => q.options = shuffle(q.options));
+
+    // Display questions
     const wrapper = document.getElementById("questions-wrapper");
-    quizData.forEach((item, index) => {
+    quizData.forEach((item, i) => {
       const div = document.createElement("div");
       div.classList.add("question");
-      div.dataset.correct = String.fromCharCode(97 + item.correct); // a,b,c,d
-      let html = `<h3>${item.q}</h3>`;
-      item.options.forEach((opt, i) => {
-        const val = String.fromCharCode(97 + i);
-        html += `<label><input type="radio" name="q${index + 1}" value="${val}"> ${opt}</label>`;
+      let html = `<h3>${i + 1}. ${item.q}</h3>`;
+      item.options.forEach(opt => {
+        html += `<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>`;
       });
       div.innerHTML = html;
       wrapper.appendChild(div);
     });
 
-    /* ===== TIMER ===== */
-    let timeLeft=300;
-    const timerDisplay=document.getElementById("timer");
-    const countdown=setInterval(()=>{
-      const m=Math.floor(timeLeft/60);
-      const s=timeLeft%60;
-      timerDisplay.textContent=`Time left: ${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+    // Timer (5 min)
+    let timeLeft = 300;
+    const timerDisplay = document.getElementById("timer");
+    const countdown = setInterval(() => {
+      const m = Math.floor(timeLeft / 60);
+      const s = timeLeft % 60;
+      timerDisplay.textContent = `⏱️ Time left: ${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
       timeLeft--;
-      if(timeLeft<0){clearInterval(countdown);alert("⏰ Time is up! Auto-submitting your quiz.");submitQuiz();}
-    },1000);
+      if (timeLeft < 0) { clearInterval(countdown); alert("⏰ Time up! Auto-submitting."); submitQuiz(); }
+    }, 1000);
 
-    /* ===== ANTI-CHEAT ===== */
-    window.onblur=()=>{alert("⚠️ Tab switch not allowed! Auto-submit triggered.");submitQuiz();};
-    document.addEventListener('copy',e=>e.preventDefault());
-    document.addEventListener('paste',e=>e.preventDefault());
+    // Anti-cheat
+    window.onblur = () => { alert("⚠️ Tab switch detected! Auto-submitting."); submitQuiz(); };
 
-    /* ===== SUBMIT ===== */
-    function submitQuiz(){
+    // Submit function
+    async function submitQuiz() {
       clearInterval(countdown);
-      document.getElementById("submitBtn").disabled=true;
-      const name=document.getElementById("playerName").value.trim();
-      const email=document.getElementById("playerEmail").value.trim();
-      let score=0;
+      document.getElementById("submitBtn").disabled = true;
 
-      const questions=document.querySelectorAll(".question");
-      questions.forEach(q=>{
-        const correct=q.dataset.correct;
-        const selected=q.querySelector('input[type="radio"]:checked');
-        const labels=q.querySelectorAll("label");
-        labels.forEach(l=>l.classList.remove("correct","wrong"));
-        if(selected){
-          if(selected.value===correct){score++;selected.parentElement.classList.add("correct");}
-          else{selected.parentElement.classList.add("wrong");q.querySelector(`input[value="${correct}"]`).parentElement.classList.add("correct");}
-        }else{q.querySelector(`input[value="${correct}"]`).parentElement.classList.add("correct");}
+      const name = document.getElementById("playerName").value.trim();
+      const email = document.getElementById("playerEmail").value.trim();
+      if (!name || !email) return alert("Please enter your name and email!");
+
+      let score = 0, answers = {};
+      document.querySelectorAll(".question").forEach((q, i) => {
+        const selected = q.querySelector("input[type='radio']:checked");
+        const correctAns = quizData[i].correct;
+        const userAns = selected ? selected.value : "Not answered";
+        const correct = userAns === correctAns;
+        if (correct) score++;
+        answers[`Q${i + 1}`] = { user: userAns, correct, correctAns };
       });
 
-      const percent=Math.round((score/quizData.length)*100);
-      const remark=percent>=90?"🏆 Excellent!":percent>=70?"👏 Very Good!":percent>=50?"🙂 Fair effort!":"📖 Keep practicing!";
+      const percent = ((score / quizData.length) * 100).toFixed(2);
+      const remark = percent >= 90 ? "🏆 Excellent"
+                    : percent >= 70 ? "👏 Very Good"
+                    : percent >= 50 ? "🙂 Fair"
+                    : "📘 Keep Practicing";
 
-      const resultBox=document.getElementById("resultBox");
-      resultBox.style.display="block";
-      resultBox.innerHTML=`<h3>Result for ${name}</h3><p>Score: ${score}/${quizData.length} (${percent}%)</p><p>${remark}</p><p>धन्यवाद! Thank you for participating </p>`;
+      document.getElementById("resultBox").innerHTML =
+        `<h3>${name}, your result:</h3>
+         <p>Score: ${score}/${quizData.length} (${percent}%)</p>
+         <p>${remark}</p>
+         <p>Generating PDF & sending to your email...</p>`;
+      document.getElementById("resultBox").style.display = "block";
 
-      // collect answers
-      const answers={};
-      document.querySelectorAll('input[type="radio"]:checked').forEach(a=>answers[a.name]=a.value);
-
-      // send to Google Sheet
-      fetch("https://script.google.com/macros/s/AKfycbzuU9hYrkoGJs-gltrA0yFDXlFV_vGAGebV_n_V92bRufQuqreaJKOVeiPN2ezGMdxHeQ/exec",{
-        method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({name,email,score,percent,remark,answers,time:new Date().toLocaleString()})
+      // Send to Google Apps Script
+      await fetch("https://script.google.com/macros/s/AKfycbzgKr3Co2Am7Q1kzfoS5HZQw2MpXAksN3auce1z6Nv2V9fbeHjyNkM7LGhuqvh6N5HbzA/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, score, percent, remark, total: quizData.length, answers })
       });
+
+      setTimeout(() => alert("✅ Result sent to your email!"), 2000);
     }
   </script>
 </body>
 </html>
-
