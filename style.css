@@ -6,7 +6,7 @@
 body {
   background: url("https://i.ibb.co/1KH5tLS/nepal-watermark.png") center no-repeat fixed,
               linear-gradient(135deg, #d6e8ff, #f7faff);
-  background-size: 350px auto, cover;
+  background-size: 300px auto, cover;
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
@@ -43,10 +43,10 @@ body {
 }
 
 .start-box h1 {
-  color: #fff;
+  color: white;
   font-size: 2rem;
-  margin-bottom: 7px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
 
 .start-box p {
@@ -56,116 +56,85 @@ body {
 
 .flag {
   width: 120px;
-  height: auto;
   margin-bottom: 15px;
   animation: flagFloat 3s infinite ease-in-out;
+}
+
+@keyframes flagFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* Start Button */
 .start-btn {
   padding: 14px 40px;
-  background: #ffffff;
+  background: white;
   color: #003c8f;
   font-size: 1.2rem;
   font-weight: bold;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(255, 255, 255, 0.4);
-  transition: 0.3s ease;
+  box-shadow: 0 4px 18px rgba(255,255,255,0.4);
+  transition: 0.3s;
 }
 
 .start-btn:hover {
-  background: #b3daff;
   transform: scale(1.07);
-}
-
-/* START SCREEN ANIMATIONS */
-@keyframes flagFloat {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-7px); }
-  100% { transform: translateY(0px); }
-}
-
-@keyframes floatUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0px); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  background: #b7d9ff;
 }
 
 /* ===============================
-   QUIZ MAIN CONTAINER
+   QUIZ CONTAINER
 =============================== */
-
 .quiz-container {
   max-width: 900px;
-  margin: 35px auto;
-  padding: 40px;
-  background: rgba(255,255,255,0.93);
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.9);
   border-radius: 18px;
-  backdrop-filter: blur(14px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-  display: none;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
   animation: fadeIn 0.8s ease-out;
 }
 
-/* Sticky Header */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
   padding: 12px;
+  background: rgba(255,255,255,0.8);
+  border-bottom: 1px solid #ccc;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #d9d9d9;
-  z-index: 20;
-}
-
-.header h2 {
-  margin: 0;
-  color: #003366;
+  z-index: 50;
 }
 
 #timer {
   background: #e60000;
-  color: #fff;
-  padding: 6px 14px;
+  color: white;
+  padding: 6px 12px;
   font-weight: 600;
   border-radius: 6px;
 }
 
-/* Inputs */
-input[type="text"],
-input[type="email"] {
+input {
   width: 100%;
   padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #b5b5b5;
   margin-bottom: 18px;
+  border-radius: 10px;
+  border: 1px solid #aaa;
   font-size: 1rem;
-  box-sizing: border-box;
 }
 
-input:focus {
-  border-color: #004aad;
-  box-shadow: 0 0 6px rgba(0, 74, 173, 0.3);
-  outline: none;
-}
-
-/* Question Cards */
+/* Question Card */
 .question {
   background: #f4f7ff;
   border-left: 6px solid #004aad;
-  border-radius: 12px;
   padding: 20px;
+  border-radius: 12px;
   margin-bottom: 25px;
-  animation: slideIn 0.45s ease-out;
+  animation: slideIn 0.4s ease-out;
 }
 
 @keyframes slideIn {
@@ -173,81 +142,59 @@ input:focus {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Options */
 label {
   display: block;
-  margin: 8px 0;
   padding: 8px;
+  margin: 8px 0;
   border-radius: 6px;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
 label:hover {
-  background: #e2eaff;
+  background: #e0eaff;
 }
 
-.correct {
-  background: #b7f5b0 !important;
-}
-.wrong {
-  background: #ffb6b6 !important;
-}
+.correct { background: #bff7b9 !important; }
+.wrong { background: #ffb6b6 !important; }
 
 /* Submit Button */
 button {
-  display: block;
-  margin: 25px auto;
   background: #004aad;
   color: white;
-  padding: 15px 36px;
-  font-size: 1.15rem;
-  font-weight: 600;
+  padding: 15px 35px;
   border: none;
   border-radius: 10px;
+  font-size: 1.15rem;
+  margin: 20px auto;
+  display: block;
   cursor: pointer;
-  transition: .3s ease;
 }
-
 button:hover {
-  background: #013578;
-  transform: scale(1.07);
+  background: #003680;
 }
 
 /* Result Box */
 #resultBox {
-  display: none;
   background: #eef7ff;
   padding: 25px;
   border-left: 6px solid #004aad;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  margin-top: 22px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-  animation: fadeIn 0.7s ease-out;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
-
+/* Mobile Fixes */
+@media(max-width:768px) {
   body {
-    background-size: 220px auto;
+    background-size: 200px auto;
   }
-
   .quiz-container {
-    margin: 15px;
     padding: 20px;
+    margin: 15px;
   }
-
-  .start-box {
-    padding: 30px 30px;
-  }
-
-  .start-box h1 {
-    font-size: 1.6rem;
-  }
-
-  button {
-    width: 100%;
+  label {
+    line-height: 1.3;
+    font-size: 1rem;
   }
 }
