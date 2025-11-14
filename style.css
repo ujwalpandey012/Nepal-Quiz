@@ -1,88 +1,92 @@
-/* ================================
-   NEPAL GK QUIZ – UJWAL PANDEY
-   Professional Glass Design
-================================ */
+/* =========================================
+   NEPAL GK QUIZ – PROFESSIONAL DESIGN
+   BY UJWAL PANDEY
+========================================= */
 
+/* Page Background */
 body {
-  background: linear-gradient(135deg, #dceeff, #f6faff);
+  background: linear-gradient(135deg, #e6f0ff, #ffffff);
   font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
-  color: #1a1a1a;
+  color: #1e1e1e;
   background-attachment: fixed;
 }
 
-/* Quiz container */
+/* Main Quiz Box */
 .quiz-container {
   max-width: 900px;
-  margin: 50px auto;
+  margin: 40px auto;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.15);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255,255,255,0.6);
 }
 
-/* Title and Timer */
+/* Title */
 h1 {
   text-align: center;
   color: #003366;
-  margin-bottom: 10px;
   font-weight: 600;
+  margin-bottom: 10px;
 }
+
+/* Timer */
 #timer {
   text-align: right;
   color: #e60000;
+  font-size: 1.15rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Input fields */
+/* Inputs */
 input[type="text"],
 input[type="email"] {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
+  padding: 14px;
   border-radius: 8px;
-  margin-bottom: 15px;
+  border: 1px solid #bbb;
+  margin-bottom: 18px;
   font-size: 1rem;
   box-sizing: border-box;
 }
 input:focus {
-  outline: none;
   border-color: #004aad;
-  box-shadow: 0 0 4px rgba(0, 74, 173, 0.4);
+  box-shadow: 0 0 6px rgba(0, 74, 173, 0.3);
+  outline: none;
 }
 
-/* Question boxes */
+/* Question Card */
 .question {
-  background: #f0f7ff;
+  background: #f4f7ff;
   border-left: 6px solid #004aad;
   border-radius: 12px;
-  padding: 20px;
+  padding: 20px 18px;
   margin-bottom: 25px;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 .question:hover {
-  background: #e9f2ff;
+  background: #e8f1ff;
 }
 
-/* Radio options */
+/* MCQ Options */
 label {
   display: block;
+  background: transparent;
   margin: 8px 0;
-  cursor: pointer;
   padding: 8px;
   border-radius: 6px;
+  cursor: pointer;
   transition: background 0.2s ease;
 }
 label:hover {
-  background: #e0ebff;
+  background: #dfeaff;
 }
 
-/* Correct and wrong colors */
+/* Correct / Wrong Colors */
 .correct {
   background: #b7f5b0 !important;
 }
@@ -90,67 +94,64 @@ label:hover {
   background: #ffb6b6 !important;
 }
 
-/* Submit button */
+/* Submit Button */
 button {
   display: block;
   margin: 25px auto;
   background: #004aad;
   color: white;
-  border: none;
   padding: 15px 36px;
-  border-radius: 10px;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 74, 173, 0.3);
+  box-shadow: 0 5px 18px rgba(0, 74, 173, 0.25);
+  transition: 0.3s ease;
 }
 button:hover {
-  background: #012b7a;
-  transform: scale(1.05);
+  background: #013578;
+  transform: scale(1.07);
 }
 
-/* Result box */
+/* Result Box */
 #resultBox {
   display: none;
-  margin-top: 25px;
-  padding: 25px;
-  background: #eef8ff;
-  border-left: 6px solid #004aad;
-  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background: #eef7ff;
+  padding: 25px;
+  font-size: 1.1rem;
+  border-left: 6px solid #004aad;
+  margin-top: 22px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
 
-/* Glass background */
+/* Glass Effect */
 .glass {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(10px);
 }
 
-/* Responsive design */
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .quiz-container {
     margin: 20px;
-    padding: 25px;
+    padding: 28px;
   }
+
   h1 {
     font-size: 1.6rem;
   }
+
   button {
     width: 100%;
     font-size: 1rem;
+    padding: 14px;
   }
+
   #timer {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
-}
-
-/* Footer (optional) */
-footer {
-  text-align: center;
-  padding: 15px;
-  color: #666;
-  font-size: 0.9rem;
 }
