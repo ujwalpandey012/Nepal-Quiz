@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ne">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nepal GK Quiz | Ujwal Pandey</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal GK Quiz | Ujwal Pandey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,14 +13,13 @@
 <!-- START SCREEN -->
 <div id="startScreen" class="start-screen">
   <div class="start-box">
-    <img src="https://i.ibb.co/M6dM5Q3/nepal-flag.gif" class="flag">
     <h1>Nepal GK Official Quiz</h1>
-    <p>Test your knowledge • Secure Proctored Quiz</p>
+    <p>Test your knowledge • Secure Quiz</p>
     <button class="start-btn" onclick="beginQuiz()">Start Quiz</button>
   </div>
 </div>
 
-<!-- QUIZ -->
+<!-- QUIZ CONTAINER -->
 <div id="quizContainer" class="quiz-container hidden">
   <div class="header">
     <h2>🇳🇵 Nepal GK Secure Quiz</h2>
@@ -38,168 +37,115 @@
   </form>
 </div>
 
-<!-- SOUND -->
-<audio id="tickSound" src="tick.mp3"></audio>
-<audio id="timeUpSound" src="timeup.mp3"></audio>
 
 <script>
-
-/* ==========================
-   QUIZ START + ANTI-CHEAT
-========================== */
-let quizStarted = false;
-
+/* START SCREEN */
 function beginQuiz() {
   document.getElementById("startScreen").classList.add("hidden");
   document.getElementById("quizContainer").style.display = "block";
-  quizStarted = true;  // Enable anti-cheat
 }
 
-/* Anti-cheat: only works AFTER quiz starts */
-window.onblur = () => {
-  if (quizStarted) {
-    alert("⚠️ Tab switch detected! Auto-submitting your quiz.");
-    submitQuiz();
-  }
-};
-
-/* ==========================
-   QUIZ DATA
-========================== */
+/* QUIZ DATA */
 const quizData = [
-  { q:"नेपालमा पहिलो रेल सेवा कहाँ सुरु भयो?<br>First railway?", options:["Raxaul – Amlekhganj","Birgunj – Simara","Janakpur – Jaynagar","Biratnagar – Rangeli"], correct:"Raxaul – Amlekhganj" },
-  { q:"पहिलो जलविद्युत आयोजना?<br>First hydro project?", options:["Pharping","Trishuli","Kulekhani","Sunkoshi"], correct:"Pharping" },
-  { q:"पहिलो बैंक?<br>First bank?", options:["Nepal Bank Limited","Nepal Rastra Bank","ADB Bank","Rastriya Banijya Bank"], correct:"Nepal Bank Limited" },
-  { q:"पहिलो संविधान?<br>First constitution?", options:["1948 A.D.","1951 A.D.","1962 A.D.","1990 A.D."], correct:"1948 A.D." },
-  { q:"UN सदस्यता?<br>Nepal joined UN?", options:["1955 A.D.","1950 A.D.","1957 A.D.","1961 A.D."], correct:"1955 A.D." },
-  { q:"पहिलो विश्वविद्यालय?<br>First university?", options:["Tribhuvan University","Kathmandu University","Purbanchal University","MWU"], correct:"Tribhuvan University" },
-  { q:"पहिलो नेपाली चलचित्र?<br>First Nepali filmed movie?", options:["Aama","Satya Harischandra","Maitighar","Harischandra"], correct:"Aama" },
-  { q:"राष्ट्रिय सभा सदस्य संख्या?<br>National Assembly members?", options:["59","56","60","61"], correct:"59" },
-  { q:"पहिलो जनगणना?<br>First census year?", options:["1911 A.D.","1941 A.D.","1952 A.D.","1961 A.D."], correct:"1911 A.D." },
-  { q:"SAARC चार्टर साइन?<br>SAARC signed?", options:["8 December 1985","6 January 1984","10 December 1986","1 Nov 1985"], correct:"8 December 1985" },
-  { q:"पहिलो आन्तरिक उडान?<br>First domestic flight?", options:["1950 A.D., Kathmandu–Simara","1949 A.D., Kathmandu–Pokhara","1950 A.D., Kathmandu–Biratnagar","1951 A.D., Kathmandu–Janakpur"], correct:"1950 A.D., Kathmandu–Simara" }
+  { q:"नेपालमा पहिलो रेलसेवा कहाँ सञ्चालन भयो?", options:["Raxaul – Amlekhganj","Birgunj – Simara","Janakpur – Jaynagar","Biratnagar – Rangeli"], correct:"Raxaul – Amlekhganj" },
+  { q:"नेपालको पहिलो जलविद्युत् आयोजना कुन हो?", options:["Pharping","Trishuli","Kulekhani","Sunkoshi"], correct:"Pharping" },
+  { q:"नेपालको पहिलो बैंक कुन हो?", options:["Nepal Bank Limited","Nepal Rastra Bank","ADB Bank","Rastriya Banijya Bank"], correct:"Nepal Bank Limited" },
+  { q:"पहिलो संविधान कहिले जारी?", options:["1948 A.D.","1951 A.D.","1962 A.D.","1990 A.D."], correct:"1948 A.D." },
+  { q:"नेपाल UN सदस्य कहिले?", options:["1955 A.D.","1950 A.D.","1957 A.D.","1961 A.D."], correct:"1955 A.D." },
+  { q:"पहिलो विश्वविद्यालय कुन?", options:["Tribhuvan University","Kathmandu University","Purbanchal University","Mid West"], correct:"Tribhuvan University" },
+  { q:"पहिलो छायाङ्कन फिल्म?", options:["Aama","Satya Harischandra","Maitighar","Harischandra"], correct:"Aama" },
+  { q:"राष्ट्रिय सभामा सदस्य कति?", options:["59","56","60","61"], correct:"59" },
+  { q:"पहिलो जनगणना?", options:["1911 A.D.","1941 A.D.","1952 A.D.","1961 A.D."], correct:"1911 A.D." },
+  { q:"SAARC चार्टर कहिले साइन?", options:["8 December 1985","6 January 1984","10 Dec 1986","1 Nov 1985"], correct:"8 December 1985" },
+  { q:"पहिलो आन्तरिक उडान?", options:["1950, Kathmandu–Simara","1949, Kathmandu–Pokhara","1950, Kathmandu–Biratnagar","1951, Kathmandu–Janakpur"], correct:"1950, Kathmandu–Simara" }
 ];
 
-/* Shuffle */
-function shuffle(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
+/* SHUFFLE */
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 shuffle(quizData);
-quizData.forEach(q => q.options = shuffle(q.options));
+quizData.forEach(q=>q.options=shuffle(q.options));
 
-/* Display Questions */
-const wrapper = document.getElementById("questions-wrapper");
-
-quizData.forEach((q, i) => {
-  const div = document.createElement("div");
+/* DISPLAY QUESTIONS */
+const wrapper=document.getElementById("questions-wrapper");
+quizData.forEach((item,i)=>{
+  const div=document.createElement("div");
   div.classList.add("question");
 
-  let html = `<h3>${i + 1}. ${q.q}</h3>`;
-  q.options.forEach(opt => {
-    html += `<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>`;
+  let html=`<h3>${i+1}. ${item.q}</h3>`;
+  item.options.forEach(opt=>{
+    html+=`<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>`;
   });
 
-  div.innerHTML = html;
+  div.innerHTML=html;
   wrapper.appendChild(div);
 });
 
-/* ==========================
-   TIMER
-========================== */
-let timeLeft = 300;
-const timerDisplay = document.getElementById("timer");
+/* TIMER */
+let timeLeft=300;
+const timerDisplay=document.getElementById("timer");
 
-const countdown = setInterval(() => {
-  const m = Math.floor(timeLeft / 60);
-  const s = timeLeft % 60;
-
-  timerDisplay.textContent = `⏱ ${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
-
-  if (timeLeft <= 10 && timeLeft > 0) {
-    document.getElementById("tickSound").play();
-  }
+const countdown=setInterval(()=>{
+  const m=Math.floor(timeLeft/60);
+  const s=timeLeft%60;
+  timerDisplay.textContent=`⏱ ${m.toString().padStart(2,"0")}:${s.toString().padStart(2,"0")}`;
 
   timeLeft--;
-  if (timeLeft < 0) {
-    document.getElementById("timeUpSound").play();
-    clearInterval(countdown);
-    submitQuiz();
-  }
-}, 1000);
+  if(timeLeft<0){clearInterval(countdown); submitQuiz();}
+},1000);
 
-/* ==========================
-   SUBMIT QUIZ
-========================== */
-async function submitQuiz() {
+/* ANTI CHEAT */
+window.onblur=()=>submitQuiz();
+
+/* SUBMIT QUIZ */
+async function submitQuiz(){
+
   clearInterval(countdown);
   document.getElementById("submitBtn").disabled = true;
 
-  const name = document.getElementById("playerName").value.trim();
-  const email = document.getElementById("playerEmail").value.trim();
+  const name=document.getElementById("playerName").value;
+  const email=document.getElementById("playerEmail").value;
 
-  if (!name || !email) {
-    alert("Please enter your name and email.");
+  if(!name || !email){
+    alert("Please enter your name & email");
     return;
   }
 
-  let score = 0;
-  let details = [];
+  let score=0;
+  let answersDetailed=[];
 
-  quizData.forEach((q, i) => {
-    const sel = document.querySelector(`input[name="q${i}"]:checked`);
-    const userAns = sel ? sel.value : "Not answered";
-    const correct = userAns === q.correct;
+  quizData.forEach((q,i)=>{
+    const sel=document.querySelector(`input[name="q${i}"]:checked`);
+    const userAns=sel?sel.value:"Not answered";
+    const correct=userAns===q.correct;
+    if(correct) score++;
 
-    if (correct) score++;
-
-    details.push({
-      question: q.q,
-      user: userAns,
-      correctAns: q.correct,
+    answersDetailed.push({
+      question:q.q,
+      user:userAns,
+      correctAns:q.correct,
       correct
     });
   });
 
   const percent = ((score / quizData.length) * 100).toFixed(2);
-  let badge = "";
-
-  if (percent >= 90) badge = "🥇 Gold Badge – Excellent!";
-  else if (percent >= 70) badge = "🥈 Silver Badge – Very Good!";
-  else if (percent >= 50) badge = "🥉 Bronze Badge – Good Effort!";
-  else badge = "❌ Try Again – Keep practicing!";
+  const badge = percent>=90?"Gold":percent>=70?"Silver":percent>=50?"Bronze":"Try Again";
 
   document.getElementById("resultBox").innerHTML = `
     <h3>${name}, your result:</h3>
     <p>Score: ${score}/${quizData.length} (${percent}%)</p>
-    <h2>${badge}</h2>
-    <p>Results have been emailed to you.</p>
+    <p>Badge: ${badge}</p>
+    <p>Your response has been submitted.</p>
   `;
-  document.getElementById("resultBox").style.display = "block";
+  document.getElementById("resultBox").style.display="block";
 
-  /* SEND TO GOOGLE SCRIPT */
-  await fetch("https://script.google.com/macros/s/AKfycbwQpIgyZx1a0LrWw3Ez56HTFUebC43rkiM3c98yK0wAPfs67Lq_9usQ7TCjbdgxRDwB3Q/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name,
-      email,
-      score,
-      percent,
-      badge,
-      total: quizData.length,
-      answersDetailed: details
-    })
+  /* SEND TO GOOGLE SHEET */
+  fetch("https://script.google.com/macros/s/AKfycbwQpIgyZx1a0LrWw3Ez56HTFUebC43rkiM3c98yK0wAPfs67Lq_9usQ7TCjbdgxRDwB3Q/exec", {
+    method:"POST",
+    mode:"no-cors",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({ name,email,score,percent,badge,answersDetailed })
   });
-
-  alert("✅ Your results have been emailed!");
 }
-
 </script>
 
 </body>
