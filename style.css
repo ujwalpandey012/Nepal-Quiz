@@ -1,0 +1,26 @@
+body{
+  background:linear-gradient(135deg,#f8fbff,#e3eeff);
+  font-family:"Poppins",sans-serif;margin:0;padding:0;color:#222;
+}
+.quiz-container{
+  max-width:900px;margin:60px auto;padding:40px;
+  background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);
+  border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.1);
+}
+h1{text-align:center;color:#004aad;margin-bottom:15px;}
+#timer{text-align:right;color:#d00000;font-weight:600;}
+input[type=text],input[type=email]{width:100%;padding:12px;border:1px solid #ccc;
+  border-radius:8px;margin-bottom:15px;}
+.question{background:#f4f8ff;border-left:5px solid #004aad;border-radius:12px;
+  padding:20px;margin-bottom:25px;transition:.3s;}
+label{display:block;margin:6px 0;cursor:pointer;padding:6px;border-radius:6px;}
+label:hover{background:#e8f0ff;}
+.correct{background:#b7f5b0!important;}
+.wrong{background:#ffb6b6!important;}
+button{display:block;margin:20px auto;background:#004aad;color:white;
+  border:none;padding:14px 32px;border-radius:8px;font-size:1.1rem;cursor:pointer;
+  transition:.3s;}
+button:hover{background:#012b7a;transform:scale(1.05);}
+#resultBox{display:none;margin-top:25px;padding:25px;background:#eef8ff;
+  border-left:6px solid #004aad;border-radius:10px;text-align:center;}
+.glass{background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);}
